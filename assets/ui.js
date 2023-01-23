@@ -21,7 +21,7 @@ async function renderGameField() {
     }
 
     // both width and height of game field since options has length sqr(n)
-    const width = Math.round(Math.sqrt(options.length));
+    const width = Math.floor(Math.sqrt(options.length));
     // table representing the game board
     const gameBoard = document.getElementById("board");
     // clear the game board
