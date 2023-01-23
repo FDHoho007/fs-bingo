@@ -32,7 +32,7 @@ async function renderGameField() {
         for (let j = 0; j <= width; j++) {
             const cell = document.createElement("td");
             cell.innerText = options.pop().toString();
-            cell.onclick = clickField;
+            cell.onclick = (e) => clickField(cell);
             row.appendChild(cell);
         }
         gameBoard.appendChild(row);
