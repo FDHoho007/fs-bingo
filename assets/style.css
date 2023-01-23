@@ -15,12 +15,11 @@ table {
     height: 80vh;
     width: 80vh;
     table-layout: fixed;
-    position: relative; /* If you want text inside of it */
+    position: center; /* If you want text inside of it */
     margin: 0 auto;
     padding: 0;
     border: 0;
     border-collapse: collapse;
-    background-color: #1000ff;
 }
 
 tr{
@@ -29,9 +28,8 @@ tr{
 }
 
 td{
-    background-color: red;
+    background-color: #FFFFFF;
     word-wrap: break-word;
-    width: 20%;
     border: 3px solid black;
     margin: 0 auto;
     font-size: 7rem;
@@ -39,11 +37,21 @@ td{
     text-align: center;
 }
 
-@media ( max-width: 800px ) {
+h1{
+    font-size: 8rem;
+    font-family: Ubuntu;
+    text-align: center;
+}
 
+.checked{
+    background-color: #00206D;
+
+}
+
+@media ( max-width: 800px ) {
     table {
         height: 80vw;
         width: 80vw;
     }
-
 }
+
