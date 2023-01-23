@@ -44,5 +44,9 @@ function win() {
     spawnConfetti();
 }
 
+if (location.hostname === "fs.bingo") {
+    location.href = "https://github.com/FDHoho007/fs-bingo";
+}
+
 // start to render the ui now
 renderGameField();
