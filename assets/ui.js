@@ -55,6 +55,6 @@ if (location.hostname === "fs.bingo") {
 }
 else {
     // start to render the ui now
-    renderTitle();
     renderGameField();
+    renderTitle();
 }
