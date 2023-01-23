@@ -39,6 +39,10 @@ function renderGameField() {
     }
 }
 
+function renderTitle() {
+    document.getElementById("title").innerText = "Fachschaftsbingo! Heute mit " + getSubdomain().to
+}
+
 function win() {
     //alert("Yeah du hast alles! BINGO!")
     spawnConfetti();
@@ -47,6 +51,7 @@ function win() {
 if (location.hostname === "fs.bingo") {
     location.href = "https://github.com/FDHoho007/fs-bingo";
 }
-
-// start to render the ui now
-renderGameField();
+else {
+    // start to render the ui now
+    renderGameField();
+}
