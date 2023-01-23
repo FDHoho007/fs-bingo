@@ -1,0 +1,49 @@
+#confetti-canvas {
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    top: 51px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    pointer-events: none;
+}
+
+table {
+    aspect-ratio: 1 / 1;
+    height: 80vh;
+    width: 80vh;
+    table-layout: fixed;
+    position: relative; /* If you want text inside of it */
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-collapse: collapse;
+    background-color: #1000ff;
+}
+
+tr{
+    padding: 0;
+    border: 0;
+}
+
+td{
+    background-color: red;
+    word-wrap: break-word;
+    width: 20%;
+    border: 3px solid black;
+    margin: 0 auto;
+    font-size: 7rem;
+    font-family: Ubuntu;
+    text-align: center;
+}
+
+@media ( max-width: 800px ) {
+
+    table {
+        height: 80vw;
+        width: 80vw;
+    }
+
+}
