@@ -35,10 +35,14 @@ function getSubdomain() {
  */
 async function getContent() {
     let response = await fetch("/bingos/" + getSubdomain() + ".json");
-    // catch 404
-    if (!response.ok)
+    let json;
+    try {
+        json = await response.json();
+    } catch (e) {
+        // catch 404; cloudflare pages will automatically show index.html
+        // therefore we have no json and exception is thrown
         throw new InvalidSubdomainError(getSubdomain());
-    let json = await response.json();
+    }
     // expect n² elements
     if (Math.pow(Math.sqrt(json.length).toFixed(0), 2) !== json.length)
         throw new InvalidConfigurationError(getSubdomain());
