@@ -61,7 +61,12 @@ const checkedClass = "checked";
 function clickField(element) {
     element.classList.add(checkedClass);
     // check for win
-    let elements = element.parentElement.children;
+    let elements = [];
+    for(let row of element.parentElement.parentElement.children) {
+        for(let td of row.children) {
+            elements.push(td);
+        }
+    }
     let colRowCount = element.parentElement.children.length;
     let checkedDiagonal = [true, true];
     for (let i = 0; i < colRowCount; i++) {
