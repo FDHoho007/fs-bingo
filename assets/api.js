@@ -45,9 +45,10 @@ async function getContent() {
         throw new InvalidSubdomainError(getSubdomain());
     }
     // expect n² elements
-    let rows = Math.floor(Math.sqrt(json.length));
-    let length = Math.pow(rows, 2);
-    for(let i = 0; i < json.length - length; i++) {
+    let actualLength = json.length;
+    let rows = Math.floor(Math.sqrt(actualLength));
+    let expectedLength = Math.pow(rows, 2);
+    for(let i = 0; i < actualLength - expectedLength; i++) {
         json.pop();
     }
     // shuffle elements
