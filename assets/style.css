@@ -47,7 +47,7 @@ h1 {
 
 .checked {
     background-color: #00206D;
-
+    color: white;
 }
 
 @media ( max-width: 800px ) {
