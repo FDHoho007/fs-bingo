@@ -8,6 +8,7 @@ class InvalidSubdomainError extends Error {
 }
 
 /**
+ * @deprecated
  * Invoked when bingo json config is badly malformed.
  */
 class InvalidConfigurationError extends Error {
@@ -44,8 +45,11 @@ async function getContent() {
         throw new InvalidSubdomainError(getSubdomain());
     }
     // expect n² elements
-    if (Math.pow(Math.sqrt(json.length).toFixed(0), 2) !== json.length)
-        throw new InvalidConfigurationError(getSubdomain());
+    let rows = Math.floor(Math.sqrt(json.length));
+    let length = Math.pow(rows, 2);
+    for(let i = 0; i < json.length - length; i++) {
+        delete json[length];
+    }
     // shuffle elements
     json = json.sort((a, b) => 0.5 - Math.random());
     return json;
