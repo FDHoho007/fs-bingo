@@ -10,7 +10,7 @@
     pointer-events: none;
 }
 
-table {
+#board {
     aspect-ratio: 1 / 1;
     height: 80vh;
     width: 80vh;
@@ -22,25 +22,35 @@ table {
     border-collapse: collapse;
 }
 
-tr {
+#board > div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 5rem;
     padding: 0;
     border: 0;
 }
 
-td {
-    background-color: #FFFFFF;
-    word-wrap: break-word;
-    border: 3px solid black;
-    margin: 0 auto;
-    font-size: 7rem;
-    font-family: Ubuntu;
+.cell {
+    font-size: 200%;
+    border: 2px solid black;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
     text-align: center;
-    cursor: pointer;
-    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    font-size: 8rem;
+.cell > p {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+h2 {
+    font-size: 1.5rem;
     font-family: Ubuntu;
     text-align: center;
 }
@@ -48,12 +58,5 @@ h1 {
 .checked {
     background-color: #00206D;
     color: white;
-}
-
-@media ( max-width: 800px ) {
-    table {
-        height: 80vw;
-        width: 80vw;
-    }
 }
 

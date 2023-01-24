@@ -28,11 +28,14 @@ async function renderGameField() {
     gameBoard.innerHTML = "";
 
     for (let i = 0; i < width; i++) {
-        const row = document.createElement("tr");
+        const row = document.createElement("div");
         for (let j = 0; j < width; j++) {
-            const cell = document.createElement("td");
-            cell.innerText = options.pop().toString();
+            const cell = document.createElement("div");
+            const text = document.createElement("p");
+            text.innerText = options.pop().toString();
+            cell.classList = "cell";
             cell.onclick = (e) => clickField(cell);
+            cell.appendChild(text);
             row.appendChild(cell);
         }
         gameBoard.appendChild(row);
