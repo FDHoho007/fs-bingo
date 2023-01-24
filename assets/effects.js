@@ -2,11 +2,26 @@ const TWO_PI = Math.PI * 2;
 const HALF_PI = Math.PI * 0.5;
 
 // canvas settings
-var viewWidth = 800,
-    viewHeight = 800,
+var viewWidth = window.innerWidth,
+    viewHeight = window.innerHeight,
     drawingCanvas = document.getElementById("confetti-canvas"),
     ctx,
     timeStep = (1/60);
+
+window.onresize = () => {
+    viewWidth = window.innerWidth;
+    viewHeight = window.innerHeight;   
+    drawingCanvas.width = viewWidth;
+    drawingCanvas.height = viewHeight;
+}
+
+window.onload = () => {
+    viewWidth = window.innerWidth;
+    viewHeight = window.innerHeight;   
+    drawingCanvas.width = viewWidth;
+    drawingCanvas.height = viewHeight;
+}
+
 
 Point = function(x, y) {
     this.x = x || 0;
