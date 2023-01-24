@@ -21,15 +21,15 @@ async function renderGameField() {
     }
 
     // both width and height of game field since options has length sqr(n)
-    const width = Math.floor(Math.sqrt(options.length));
+    const width = Math.sqrt(options.length);
     // table representing the game board
     const gameBoard = document.getElementById("board");
     // clear the game board
     gameBoard.innerHTML = "";
 
-    for (let i = 0; i <= width; i++) {
+    for (let i = 0; i < width; i++) {
         const row = document.createElement("tr");
-        for (let j = 0; j <= width; j++) {
+        for (let j = 0; j < width; j++) {
             const cell = document.createElement("td");
             cell.innerText = options.pop().toString();
             cell.onclick = (e) => clickField(cell);
