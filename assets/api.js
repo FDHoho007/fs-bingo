@@ -48,7 +48,7 @@ async function getContent() {
     let rows = Math.floor(Math.sqrt(json.length));
     let length = Math.pow(rows, 2);
     for(let i = 0; i < json.length - length; i++) {
-        delete json[length];
+        json.pop();
     }
     // shuffle elements
     json = json.sort((a, b) => 0.5 - Math.random());
