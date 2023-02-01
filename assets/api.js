@@ -24,7 +24,10 @@ class InvalidConfigurationError extends Error {
  * @returns {string}
  */
 function getSubdomain() {
-    return location.hostname.split(".")[0];
+    if(location.hash === "")
+        return location.hostname.split(".")[0];
+    else
+        return location.hash.substring(1);
 }
 
 /**
