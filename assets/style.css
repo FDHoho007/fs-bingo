@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #confetti-canvas {
     position: absolute;
     width: 512px;
@@ -11,15 +15,9 @@
 }
 
 #board {
-    aspect-ratio: 1 / 1;
-    height: 80vh;
-    width: 80vh;
-    table-layout: fixed;
-    position: center; /* If you want text inside of it */
     margin: 0 auto;
     padding: 0;
     border: 0;
-    border-collapse: collapse;
 }
 
 #board > div {
@@ -27,7 +25,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem 5rem;
+    margin: 2rem 0;
     padding: 0;
     border: 0;
 }
@@ -42,16 +40,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
+    padding: 10px;
 }
 
+/* Textbox */
 .cell > p {
     max-width: 100%;
-    word-wrap: break-word;
+    max-height: 100%;
 }
 
 h2 {
     font-size: 1.5rem;
-    font-family: Ubuntu;
+    font-family: sans-serif;
     text-align: center;
 }
 

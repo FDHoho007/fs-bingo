@@ -25,7 +25,7 @@ async function renderGameField() {
     // table representing the game board
     const gameBoard = document.getElementById("board");
     // clear the game board
-    gameBoard.innerHTML = "";
+    document.querySelectorAll("#board div").forEach(e => e.remove());
 
     for (let i = 0; i < width; i++) {
         const row = document.createElement("div");
@@ -40,7 +40,14 @@ async function renderGameField() {
         }
         gameBoard.appendChild(row);
     }
+    gameBoard.style.maxWidth = width*166 + "px";
+    resizeText({
+        elements: document.querySelectorAll('.cell p'),
+        step: 0.5
+    })
 }
+
+
 
 function renderTitle() {
     const name = getSubdomain().toLowerCase();
