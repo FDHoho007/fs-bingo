@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #confetti-canvas {
@@ -34,6 +35,8 @@
     width: 10rem;
     height: 10rem;
     border-radius: 1rem;
+    border-color: deeppink;
+    border-width: 4px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -48,10 +51,17 @@
     max-height: 100%;
 }
 
-h2 {
-    font-size: 1.5rem;
+#title {
+    font-size: 2rem;
     font-family: sans-serif;
     text-align: center;
+    width: 100%;
+    padding: 2rem;
+    margin-top: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: #00206D;
+    color: white;
 }
 
 .checked {
@@ -61,4 +71,5 @@ h2 {
 
 body {
     overflow: hidden;
+    margin: 0;
 }
